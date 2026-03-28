@@ -3,29 +3,20 @@ import Layout from "../../layouts/Layout.astro";
 import BlogCard from "../../components/BlogCard.astro";
 import { getCollection } from "astro:content";
 
-const pageTitle = "Latest Insights";
-const pageDescription =
-    "Expert advice and analysis on digital marketing trends and strategies.";
 
 const posts = (await getCollection("blog")).sort(
     (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
 );
 ---
 
-<Layout title="Blog">
+<Layout title="The Strategy Lab | B2B Marketing Diagnosis | Jenkins Digital">
     <div class="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div
             class="relative max-w-lg mx-auto divide-y divide-gray-200 lg:max-w-7xl"
         >
             <div>
-                <h2
-                    class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"
-                >
-                    {pageTitle}
-                </h2>
-                <p class="mt-3 text-xl text-gray-500 sm:mt-4">
-                    {pageDescription}
-                </p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">The Strategy Lab: Where we diagnose the leaks in your B2B growth.</h1>
+                <p class="text-xl text-slate-600 max-w-2xl border-l-4 border-teal-500 pl-6 py-2 italic">Hard truths on market orientation, diagnosis, and why your current agency is likely grading their own homework.</p>
             </div>
             <div
                 class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12"
