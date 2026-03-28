@@ -1,0 +1,55 @@
+---
+const testimonials = [
+    {
+        quote: "Jenkins Digital completely transformed our online presence. Their data-driven approach led to a 200% increase in qualified leads within just three months.",
+        name: "Sarah Johnson",
+        title: "VP of Marketing",
+        company: "TechFlow",
+        image: "https://ui-avatars.com/api/?name=Sarah+Johnson&background=0D9488&color=fff",
+    },
+    {
+        quote: "The level of expertise and transparency Curtis brings to the table is unmatched. It feels like having a dedicated CMO on our team.",
+        name: "Michael Chen",
+        title: "Founder",
+        company: "GrowthRocket",
+        image: "https://ui-avatars.com/api/?name=Michael+Chen&background=0D9488&color=fff",
+    },
+];
+---
+
+<section class="bg-gray-50 py-12 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                Trusted by Industry Leaders
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            {
+                testimonials.map((testimonial) => (
+                    <div class="bg-white rounded-2xl shadow-lg p-8 relative">
+                        <div class="flex items-center mb-6">
+                            <img
+                                src={testimonial.image}
+                                alt={testimonial.name}
+                                class="h-14 w-14 rounded-full object-cover mr-4"
+                            />
+                            <div>
+                                <h3 class="text-lg font-bold text-gray-900">
+                                    {testimonial.name}
+                                </h3>
+                                <p class="text-sm text-gray-500">
+                                    {testimonial.title}, {testimonial.company}
+                                </p>
+                            </div>
+                        </div>
+                        <blockquote class="text-gray-600 text-lg italic leading-relaxed">
+                            "{testimonial.quote}"
+                        </blockquote>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

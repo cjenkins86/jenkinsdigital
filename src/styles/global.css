@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* This restores your 'text-primary' and 'bg-primary' classes */
+  --color-primary: #0d9488; /* teal-600 */
+  --color-primary-hover: #0f766e; /* teal-700 */
+  
+  /* Ensure your brand font carries through */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* This ensures the 'prose' (blog) links also use your brand teal */
+@utility prose-teal {
+  --tw-prose-links: var(--color-primary);
+  --tw-prose-headings: #111827;
+}

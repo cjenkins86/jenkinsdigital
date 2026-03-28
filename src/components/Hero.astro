@@ -1,0 +1,137 @@
+---
+interface CTA {
+    text: string;
+    href: string;
+    className: string;
+}
+
+interface Props {
+    title: string;
+    subtitle: string;
+    description: string;
+    ctas?: CTA[];
+}
+
+const { title, subtitle, description, ctas } = Astro.props;
+---
+
+<section
+    class="relative bg-gradient-to-br from-teal-50 to-orange-50 overflow-hidden py-12 md:py-16"
+>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Alert Banner -->
+        <div
+            class="inline-flex items-center px-4 py-1.5 rounded-full border border-gray-200 bg-gray-50 mb-8"
+        >
+            <span class="text-sm font-medium text-gray-600"
+                >April is full. Taking May applications — 1 spot left.</span
+            >
+        </div>
+
+        <h1
+            class="text-5xl tracking-tight font-extrabold text-gray-900 md:text-6xl leading-none mb-6"
+        >
+            <span class="block">{title}</span>
+            <span class="block text-teal-600 mt-2">{subtitle}</span>
+        </h1>
+
+        <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-500 mb-8">
+            {description}
+        </p>
+
+        <div class="mt-10 flex justify-center gap-4">
+            {
+                ctas &&
+                    ctas.map((cta) => (
+                        <div class="rounded-md shadow">
+                            <a href={cta.href} class={cta.className}>
+                                {cta.text}
+                            </a>
+                        </div>
+                    ))
+            }
+        </div>
+
+        <!-- Trust/Benefit Badges -->
+        <div
+            class="mt-16 flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-500"
+        >
+            <div class="flex items-center">
+                <svg
+                    class="h-5 w-5 text-teal-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span
+                    ><strong class="font-bold text-gray-900"
+                        >Fixed price.</strong
+                    > No monthly retainers.</span
+                >
+            </div>
+            <div class="flex items-center">
+                <svg
+                    class="h-5 w-5 text-teal-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span
+                    ><strong class="font-bold text-gray-900"
+                        >You own the data.</strong
+                    > You keep all findings.</span
+                >
+            </div>
+            <div class="flex items-center">
+                <svg
+                    class="h-5 w-5 text-teal-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span
+                    ><strong class="font-bold text-gray-900"
+                        >Proven success.</strong
+                    > Award-winning work in financial services.</span
+                >
+            </div>
+            <div class="flex items-center">
+                <svg
+                    class="h-5 w-5 text-teal-500 mr-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span
+                    ><strong class="font-bold text-gray-900"
+                        >Strict limits.</strong
+                    > I take three clients at a time. No exceptions.</span
+                >
+            </div>
+        </div>
+    </div>
+</section>

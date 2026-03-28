@@ -1,0 +1,111 @@
+---
+interface ComparisonFeature {
+    feature: string;
+    jenkins: boolean;
+    agency: boolean;
+    freelancer: boolean;
+    inHouse: boolean;
+}
+
+interface Props {
+    headers: string[];
+}
+
+const { headers } = Astro.props;
+
+const features: ComparisonFeature[] = [
+    {
+        feature: "Senior Strategy",
+        jenkins: true,
+        agency: true,
+        freelancer: false,
+        inHouse: false,
+    },
+    {
+        feature: "No Monthly Retainers",
+        jenkins: true,
+        agency: false,
+        freelancer: true,
+        inHouse: false,
+    },
+    {
+        feature: "Fixed Project Costs",
+        jenkins: true,
+        agency: false,
+        freelancer: false,
+        inHouse: true,
+    },
+    {
+        feature: "Fast Setup",
+        jenkins: true,
+        agency: false,
+        freelancer: true,
+        inHouse: false,
+    },
+    {
+        feature: "Zero Junior Staff",
+        jenkins: true,
+        agency: false,
+        freelancer: true,
+        inHouse: false,
+    },
+];
+---
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                The Old Model is Broken.
+            </h2>
+        </div>
+
+        <div class="overflow-x-auto">
+            <div class="inline-block min-w-full align-middle">
+                <div
+                    class="shadow ring-1 ring-black ring-opacity-5 md:rounded-lg overflow-hidden"
+                >
+                    <table class="min-w-full divide-y divide-gray-200 bg-white">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                {
+                                    headers.map((header, index) => (
+                                        <th
+                                            scope="col"
+                                            class={`px-6 py-4 text-center text-sm font-bold text-gray-900 uppercase tracking-wider ${index === 0 ? "text-left" : ""}`}
+                                        >
+                                            {header}
+                                        </th>
+                                    ))
+                                }
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200 bg-white">
+                            {
+                                features.map((row) => (
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-left">
+                                            {row.feature}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">
+                                            {row.jenkins ? "✅" : "❌"}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">
+                                            {row.agency ? "✅" : "❌"}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">
+                                            {row.freelancer ? "✅" : "❌"}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">
+                                            {row.inHouse ? "✅" : "❌"}
+                                        </td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

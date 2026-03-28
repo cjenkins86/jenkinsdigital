@@ -1,0 +1,63 @@
+---
+const missionTitle = "Our Mission";
+const missionText1 =
+    "At Jenkins Digital, our mission is simple: to empower businesses with data-driven digital marketing strategies that deliver measurable results. We believe in transparency, integrity, and continuous innovation.";
+const missionText2 =
+    "Founded in 2020, we've helped over 100 clients achieve their growth goals through tailored SEO, PPC, and content marketing campaigns.";
+
+const whyChooseUsTitle = "Why Choose Us?";
+const whyChooseUsItems = [
+    { text: "No nonsense", iconPath: "M5 13l4 4L19 7" },
+    { text: "Transparent Reporting", iconPath: "M5 13l4 4L19 7" },
+    { text: "Expert Network", iconPath: "M5 13l4 4L19 7" },
+];
+---
+
+<div class="-mt-32 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div
+        class="relative shadow-xl rounded-2xl overflow-hidden bg-white p-8 lg:p-12"
+    >
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl font-extrabold text-gray-900">
+                    {missionTitle}
+                </h2>
+                <p class="mt-4 text-lg text-gray-500">
+                    {missionText1}
+                </p>
+                <p class="mt-4 text-lg text-gray-500">
+                    {missionText2}
+                </p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-8 border border-gray-100">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">
+                    {whyChooseUsTitle}
+                </h3>
+                <ul class="space-y-4">
+                    {
+                        whyChooseUsItems.map((item) => (
+                            <li class="flex items-start">
+                                <svg
+                                    class="h-6 w-6 text-primary mt-1"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d={item.iconPath}
+                                    />
+                                </svg>
+                                <span class="ml-3 text-gray-600">
+                                    {item.text}
+                                </span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

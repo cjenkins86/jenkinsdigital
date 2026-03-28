@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import FeatureGrid from "../components/FeatureGrid.astro";
+import AboutSection from "../components/AboutSection.astro";
+import ProfitEngine from "../components/ProfitEngine.astro";
+import ComparisonTable from "../components/ComparisonTable.astro";
+import CTA from "../components/CTA.astro";
+const heroTitle = "I find the money your marketing is losing.";
+const heroSubtitle = "Then I help you take control of it.";
+const heroDescription =
+	"Most businesses do not lose cash on bad ads. They lose it on ads that look fine in the reports. The catch is that the people who bill you make those reports. I check the whole system. I show you the truth and fix the leaks. No long contracts. No big words. No lies.";
+const services = [
+	{
+		title: "The Diagnosis",
+		description:
+			"I check your ad accounts, tracking, and web pages. I look for the gap between your reports and reality. I find fake traffic, bad keywords, and broken tracking pixels. I spot fake goals. I find the leaks. Week 1: Full account review and a clear report on wasted money.",
+		iconPath: "M8 8l4-4v16M8 20h8",
+	},
+	{
+		title: "The Fix",
+		description:
+			"We stop the bleeding right away. I cut the keywords that waste your money. I fix your broken tracking. I rewrite the web text that hurts your sales. I make the actual changes. I do not just write a document about them. Week 2: Changes go live. No waiting around for approval.",
+		iconPath: "M7 8 C7 4 17 4 17 8 C17 13 7 20 7 20 H17",
+	},
+	{
+		title: "The Growth Plan",
+		description:
+			"We take the saved money and put it where it works. You finish our time together spending the same amount of money or less. But you make more sales. Then you decide if you want to keep working with me. There is no pressure either way. Week 3: New budget plan and a clear guide for the next 90 days.",
+		iconPath: "M7 5h9l-4 6c3 0 5 2 5 5s-2 5-5 5h-4",
+	},
+];
+
+const heroCTAs = [
+	{
+		text: "Apply for May →",
+		href: "/apply",
+		className:
+			"w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-orange-500 hover:bg-orange-600 md:py-4 md:text-lg md:px-10 transition-colors shadow-xl",
+	},
+	{
+		text: "Join the Waitlist",
+		href: "/waitlist",
+		className:
+			"w-full flex items-center justify-center px-8 py-3 text-base font-medium text-gray-600 hover:text-gray-900 bg-transparent md:py-4 md:text-lg md:px-10 transition-colors",
+	},
+];
+
+const columnHeaders = [
+	"Feature",
+	"Jenkins Digital",
+	"Traditional Agency",
+	"Freelancer / Contractor",
+	"In-House Hire",
+];
+---
+
+<Layout title="Home">
+	<Hero
+		title={heroTitle}
+		subtitle={heroSubtitle}
+		description={heroDescription}
+		ctas={heroCTAs}
+	/>
+	<Services services={services} />
+	<FeatureGrid
+		heading="Everything you need."
+		subheading="Nothing you don't."
+	/>
+	<ProfitEngine />
+	<AboutSection />
+	<ComparisonTable headers={columnHeaders} />
+	<CTA />
+</Layout>

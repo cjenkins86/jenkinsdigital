@@ -1,0 +1,52 @@
+---
+const teamTitle = "Meet the Founder";
+const teamSubtitle =
+    "Leading a network of expert freelancers to deliver results.";
+const founder = {
+    name: "Curtis Jenkins",
+    role: "Founder & CEO",
+    image: "https://ui-avatars.com/api/?name=Curtis+Jenkins&background=14b8a6&color=fff",
+    bio: "Marketing veteran with over 15 years of experience helping businesses grow. I collaborate with a curated network of specialized freelancers to provide top-tier service without the agency bloat.",
+};
+---
+
+<div class="bg-gray-50 py-12 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                {teamTitle}
+            </h2>
+            <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                {teamSubtitle}
+            </p>
+        </div>
+        <div class="mt-12 flex justify-center">
+            <div class="max-w-sm w-full">
+                <div class="space-y-4">
+                    <div class="aspect-w-3 aspect-h-3">
+                        <img
+                            class="object-cover shadow-lg rounded-lg w-full h-64"
+                            src={founder.image}
+                            alt={founder.name}
+                        />
+                    </div>
+                    <div class="space-y-2">
+                        <div class="text-lg leading-6 font-medium space-y-1">
+                            <h3 class="text-gray-900">
+                                {founder.name}
+                            </h3>
+                            <p class="text-primary">
+                                {founder.role}
+                            </p>
+                        </div>
+                        <div class="text-lg">
+                            <p class="text-gray-500">
+                                {founder.bio}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

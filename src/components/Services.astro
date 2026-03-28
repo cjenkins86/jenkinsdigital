@@ -1,0 +1,68 @@
+---
+interface Service {
+    title: string;
+    description: string;
+    iconPath: string;
+}
+
+interface Props {
+    services: Service[];
+}
+
+const { services } = Astro.props;
+---
+
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2
+                class="text-sm text-teal-600 font-bold tracking-wide uppercase mb-3"
+            >
+                The uncomfortable truth
+            </h2>
+            <p class="text-4xl font-extrabold text-gray-900 sm:text-5xl mb-6">
+                Your agency is not lying to you. They just report the numbers
+                you agreed to track.
+            </p>
+            <p class="text-xl text-gray-500">
+                That is the trap. They sell you reach, clicks, and brand
+                awareness. Those numbers can always go up. It does not matter if
+                your actual sales are terrible. They are not trying to steal
+                from you. The real issue is that nobody takes the blame when
+                things fail. Nobody wants to ask if the ads actually make money.
+                <br />
+                I do.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            {
+                services.map((service) => (
+                    <div class="bg-white rounded-2xl shadow-sm p-8 pt-12 border border-gray-100 h-full relative mt-12">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 -mt-12 w-12 h-12 bg-teal-600 rounded-lg flex items-center justify-center text-white shadow-md">
+                            <svg
+                                class="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d={service.iconPath}
+                                />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 mt-4">
+                            {service.title}
+                        </h3>
+                        <p class="text-gray-500 leading-relaxed">
+                            {service.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
